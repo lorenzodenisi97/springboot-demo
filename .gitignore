@@ -1,0 +1,7 @@
+target
+.idea
+/mongo/data/
+.gradle/*
+gradle/*
+/gradle_command
+build/*

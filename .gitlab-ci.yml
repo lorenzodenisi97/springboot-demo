@@ -1,0 +1,25 @@
+image: gradle:alpine
+
+#variables:
+#  SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+#  GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+
+stages:
+  - sonarqube-check
+
+#sonarqube-check:
+#  stage: sonarqube-check
+#  tags:
+#    - genai-vulnerability-mitigation
+#
+#  script:
+#    - |
+#      gradle sonar -Dsonar.qualitygate.wait=true || echo "SonarQube analysis completed"
+#      echo 0
+#  allow_failure: true
+#  rules:
+#    - if: $CI_COMMIT_BRANCH == 'master'
+#    - if: $CI_COMMIT_BRANCH == 'main'
+#    - if: $CI_COMMIT_BRANCH == 'develop'
+#    - if: $CI_COMMIT_BRANCH != 'main'
+#      when: never
